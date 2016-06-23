@@ -14,3 +14,6 @@ wp-content/wp-cache-config.php
 wp-content/mu-plugins/*
 wp-content/plugins/*
 wp-content/themes/*
+node_modules
+
+!wp-content/themes/schoolbus/

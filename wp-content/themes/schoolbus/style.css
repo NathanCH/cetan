@@ -1,0 +1,23 @@
+/*
+Theme Name: Cetan Spring Portfolio
+Author: Nathan Charrois
+Author URI: http://www.cetan.ca
+Description: Custom Wordpress theme for Summer 2016 portfolio.
+*/
+
+/* --------------------------------------------------------------
+The purpose of this CSS file is to 
+	1. Provide meta information on the theme
+	2. Import main css file and 3rd party files.
+
+---------------------------------------------------------------*/
+
+/* --------------------------------------------------------------
+	IMPORTS
+---------------------------------------------------------------*/
+
+@import url("public/css/styles.css"); /* Import CSS RESET */
+
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold"); 
+@import url("http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700");

@@ -1,0 +1,25 @@
+{
+  "name": "cetan",
+  "version": "1.0.0",
+  "description": "Portfolio site",
+  "main": "index.php",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanCH/cetan.git"
+  },
+  "author": "Nathan Charrois",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanCH/cetan/issues"
+  },
+  "homepage": "https://github.com/NathanCH/cetan#readme"
+}
