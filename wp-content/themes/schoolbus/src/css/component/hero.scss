@@ -1,0 +1,44 @@
+.Hero{
+
+	color: $grey;
+	background-image: url('../../public/img/hawk.png');
+	background-repeat: no-repeat;
+	background-position: top 60px right;
+	height: 425px;
+	width: 100%;
+	overflow: auto;
+
+	@media screen and (max-width: $break-medium) {
+		height: 375px;
+		background-size: 375px 239px;
+		background-position: top 40px right;
+	}
+
+	@media screen and (max-width: $break-small) {
+		background: none;
+	}
+
+	&__text{
+		font-family: inherit;
+		margin: 125px 0 50px;
+		font-size: 50px;
+		line-height: 72px;
+
+		@media screen and (max-width: $break-medium) {
+			margin: 75px 0 30px;
+			font-size: 42px;
+			line-height: 56px;
+		}
+	}
+
+	&__sub-text{
+		font-size: 22px;
+		line-height: 32px;
+		max-width: 435px;
+
+		@media screen and (max-width: $break-medium) {
+			font-size: 18px;
+			line-height: 28px;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+.Footer{
+	padding: 65px;
+	background: white;
+	position: relative;
+
+	&:before{
+		content:"";
+		display: block;
+		width: 321px;
+		height: 37px;
+		position: absolute;
+		top: -37px;
+		right: 321px;
+		background-image: url('../../public/img/footer_detail.png');
+	}
+
+	&__link{
+		color: $grey;
+	}
+
+	&__copy{
+		color: $grey;
+	}
+}

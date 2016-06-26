@@ -16,8 +16,8 @@ The purpose of this CSS file is to
 	IMPORTS
 ---------------------------------------------------------------*/
 
-@import url("public/css/styles.css"); /* Import CSS RESET */
+@import url("public/css/style.css"); /* Import CSS RESET */
 
-@import url("http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold"); 
-@import url("http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700");
+@import url("http://fonts.googleapis.com/css?family=Caveat:700"); 
+@import url("http://fonts.googleapis.com/css?family=Droid+Serif:400");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css");
