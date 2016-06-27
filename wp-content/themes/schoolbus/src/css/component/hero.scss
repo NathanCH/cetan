@@ -3,19 +3,24 @@
 	color: $grey;
 	background-image: url('../../public/img/hawk.png');
 	background-repeat: no-repeat;
-	background-position: top 60px right;
+	background-position: top 50px right;
 	height: 425px;
 	width: 100%;
+	margin: 25px 0 75px;
 	overflow: auto;
 
 	@media screen and (max-width: $break-medium) {
 		height: 375px;
 		background-size: 375px 239px;
-		background-position: top 40px right;
+		background-position: top 45px right;
+		margin: 25px 0 50px;
 	}
 
 	@media screen and (max-width: $break-small) {
-		background: none;
+		background-image: url('../../public/img/circle.png');
+		background-size: auto;
+		background-position: top 25px left 146px;
+		margin: 25px 0 0;
 	}
 
 	&__text{
@@ -26,19 +31,28 @@
 
 		@media screen and (max-width: $break-medium) {
 			margin: 75px 0 30px;
-			font-size: 42px;
-			line-height: 56px;
+			font-size: 46px;
+			line-height: 62px;
 		}
+
+		@media screen and (max-width: $break-small) {
+			font-size: 34px;
+			line-height: 50px;
+		}	
 	}
 
 	&__sub-text{
 		font-size: 22px;
-		line-height: 32px;
-		max-width: 435px;
+		line-height: 34px;
 
 		@media screen and (max-width: $break-medium) {
-			font-size: 18px;
-			line-height: 28px;
+			font-size: 20px;
+			line-height: 30px;
 		}
+
+		@media screen and (max-width: $break-small) {
+			font-size: 16px;
+			line-height: 26px;
+		}	
 	}
 }

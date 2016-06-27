@@ -1,0 +1,19 @@
+.Post{
+
+	margin: 25px 0;
+
+	&__image{
+		border-radius: 3px;
+	}
+
+	&__title{
+		font-family: inherit;
+		font-size: 22px;
+		line-height: 32px;
+		margin: 25px 0 5px;
+	}
+
+	&__link{
+		color: $grey;
+	}
+}

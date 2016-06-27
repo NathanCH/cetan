@@ -1,7 +1,8 @@
 .Footer{
-	padding: 65px;
+	padding: 50px 0;
 	background: white;
 	position: relative;
+	clear: both;
 
 	&:before{
 		content:"";
@@ -10,15 +11,17 @@
 		height: 37px;
 		position: absolute;
 		top: -37px;
-		right: 321px;
+		right: 20%;
 		background-image: url('../../public/img/footer_detail.png');
 	}
 
 	&__link{
 		color: $grey;
+		float: left;
 	}
 
-	&__copy{
+	&__copyright{
 		color: $grey;
+		float: right;
 	}
 }

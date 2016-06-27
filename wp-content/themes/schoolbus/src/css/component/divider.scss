@@ -1,0 +1,15 @@
+.Divider{
+	border: none;
+	background: url('../../public/img/divider.png') no-repeat top center;
+	height: 15px;
+	margin: 50px 0;
+	overflow: auto;
+
+	@media screen and (max-width: $break-medium) {
+		margin: 25px 0;
+	}
+
+	@media screen and (max-width: $break-small) {
+		margin: 0;
+	}
+}

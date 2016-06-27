@@ -3,12 +3,14 @@
 @import "base/variables";
 
 // Components...
-@import "component/header";
 @import "component/logo";
 @import "component/menu";
 @import "component/hero";
-@import "component/footer";
+@import "component/post";
+@import "component/divider";
 
 // Layout...
+@import "layout/header";
+@import "layout/footer";
 @import "layout/default";
 @import "layout/section";

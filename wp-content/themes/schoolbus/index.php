@@ -4,6 +4,7 @@ get_template_part('templates/hero');
 ?>
 <div class="row">
 	<div class="small-12 column">
+		<hr class="Divider" />
 		<section class="Featured Section">
 			<?php
 			if(have_posts()) {

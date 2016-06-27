@@ -1,8 +1,8 @@
-		<section class="Section Footer">
+		<section class="Footer">
 			<div class="row">
-				<div class="small-12 column clearfix">
-					<a class="Footer__link float-left" href="mailto:nathancharrois@gmail.com">nathancharrois@gmail.com</a>
-					<span class="Footer_copyright float-right">&copy; <?php echo date('Y'); ?>
+				<div class="small-12 column">
+					<a class="Footer__link" href="mailto:nathancharrois@gmail.com">nathancharrois@gmail.com</a>
+					<div class="Footer__copyright">&copy; <?php echo date('Y'); ?></div>
 				</div>
 			</div>
 		</section>
