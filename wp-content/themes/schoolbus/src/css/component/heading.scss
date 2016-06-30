@@ -1,0 +1,13 @@
+.Heading{
+	
+	margin-top: 175px;
+
+	@media screen and (max-width: $break-small) {
+		margin: 75px 0;
+	}
+
+	&__text{
+		font-family: inherit;
+
+	}
+}

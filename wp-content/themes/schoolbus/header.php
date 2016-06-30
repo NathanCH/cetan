@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="small-12 column clearfix">
 					<div class="Header__logo float-left">
-						<a class="Logo" href="#">
+						<a class="Logo" href="/">
 							Cetan
 						</a>
 					</div>
@@ -21,20 +21,13 @@
 							<button class="Menu__toggle">
 								<i class="fa fa-bars"></i>
 							</button>
-							<ul class="Menu__nav">
-								<li class="Menu__item">
-									<a class="Menu__link" href="#">Web</a>
-								</li>
-								<li class="Menu__item">
-									<a class="Menu__link" href="#">Photo</a>
-								</li>
-								<li class="Menu__item">
-									<a class="Menu__link" href="#">Blog</a>
-								</li>
-								<li class="Menu__item">
-									<a class="Menu__link" href="#">Contact</a>
-								</li>
-							</ul>
+							<?php 
+							wp_nav_menu([
+								'theme_location' => 'header-menu',
+								'container' => false,
+								'menu_class' => 'Menu__nav'
+							]); 
+							?>
 						</div>
 					</div>
 				</div>

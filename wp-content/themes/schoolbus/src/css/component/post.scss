@@ -1,9 +1,13 @@
 .Post{
 
-	margin: 25px 0;
+	margin: 25px 0 75px;
 
 	&__image{
 		border-radius: 3px;
+
+		&:hover{
+			border-radius: 10px;
+		}
 	}
 
 	&__title{

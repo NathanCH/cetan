@@ -25,11 +25,11 @@
 
 	&__item{
 		display: inline-block;
-	}
 
-	&__link{
-		color: $grey;
-		padding: 15px 25px;
+		a{
+			color: $grey;
+			padding: 15px 25px;
+		}
 	}
 
 	&--open{
@@ -58,11 +58,11 @@
 			#{$block}__item{
 				width: 100%;
 				text-align: right;
-			}
 
-			#{$block}__link{
-				font-size: 22px;
-				display: block;
+				a{
+					font-size: 22px;
+					display: block;
+				}
 			}
 		}
 	}
