@@ -51,13 +51,31 @@
 		font-size: 22px;
 		line-height: 32px;
 		margin: 25px 0 5px;
+
+		&--large{
+			font-size: 28px;
+			font-weight: bold;
+			margin: 0 0 40px 0;
+		}
 	}
 
 	&__link{
 		color: $grey;
+
+		&--large{
+			font-size: 22px;
+		}
 	}
 
 	&__meta{
 		color: $grey-light;
+	}
+
+	&__date{
+		line-height: 36px;
+
+		.fa{
+			margin-right: 10px;
+		}
 	}
 }
