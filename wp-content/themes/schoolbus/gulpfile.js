@@ -6,6 +6,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var sourceMaps = require('gulp-sourcemaps');
 var watch = require('gulp-watch');
+var minify = require('gulp-minify');
 
 gulp.task('sass', function() {
 	gulp.src('./src/css/*.scss')
@@ -16,6 +17,12 @@ gulp.task('sass', function() {
 		.pipe(rename('style.css'))
 		.pipe(gulp.dest('./public/css'));
 });
+
+gulp.task('js', function() {
+	gulp.src('./src/js/*.js')
+		.pipe(minify())
+		.pipe(gulp.dest('./public/js'));
+})
 
 gulp.task('watch', function() {
 	gulp.watch('./src/css/**/*', ['sass'])

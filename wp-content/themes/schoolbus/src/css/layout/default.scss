@@ -2,4 +2,8 @@
 	background: $background;
 	font-family: $font-body;
 	color: $grey;
+
+	&--noscroll{
+		overflow: hidden;
+	}
 }
