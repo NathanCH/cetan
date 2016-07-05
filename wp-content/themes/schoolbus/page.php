@@ -1,11 +1,13 @@
 <?php
 get_header();
+
+if (have_posts()) {
 ?>
 <div class="row">
 	<div class="small-12 column">
 		<div class="Heading clearfix">
 			<h1 class="Heading__text pull-left">
-				<?php echo get_category_name(); ?>
+				<?php the_title(); ?>
 			</h1>
 			<ul class="Breadcrumb pull-right">
 				<li class="Breadcrumb__item">
@@ -13,7 +15,7 @@ get_header();
 				</li>
 				<li class="Breadcrumb__item">
 					<a href="#" class="Breadcrumb__link Breadcrumb__link--active">
-						<?php echo get_category_name(); ?>
+						<?php the_title(); ?>
 					</a>
 				</li>
 			</ul>
@@ -21,24 +23,23 @@ get_header();
 	</div>
 </div>
 <div class="row">
-	<div class="small-12 column">
+	<div class="small-12 medium-8 large-9 columns">
 		<section class="Page">
 			<?php
-			if(have_posts()) {
-
-				get_template_part('templates/content-all');
-
-			}
-
-			else{
-
-				get_template_part('templates/content-none');
-
-			}
-			?>
+			while (have_posts()) : the_post(); 
+								
+				the_content('');
+				
+			endwhile;
+			?>		
 		</section>
+	</div>
+	<div class="small-12 medium-4 large-3 columns">
+		<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php
+}
+
 get_footer();
 ?>

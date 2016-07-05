@@ -39,6 +39,29 @@ function schoolbus_register_menus()
 
 add_action('init', 'schoolbus_register_menus');
 
+function schoolbus_register_sidebars()
+{
+	register_sidebar([
+		'name' => __('Contact Sidebar'),
+		'id' => 'Contact-Sidebar',
+		'before_widget' => '<div id="%1$s" class="Widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="Widget__title">',
+		'after_title' => '</h3>'
+	]);
+
+	register_sidebar([
+		'name' => __('About Sidebar'),
+		'id' => 'About-Sidebar',
+		'before_widget' => '<div id="%1$s" class="Widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="Widget__title">',
+		'after_title' => '</h3>'
+	]);
+}
+
+add_action('init', 'schoolbus_register_sidebars');
+
 function custom_wp_nav_menu_objects($objects, $args)
 {
 	foreach($objects as $key => $item)
@@ -50,3 +73,10 @@ function custom_wp_nav_menu_objects($objects, $args)
 }
 
 add_filter('wp_nav_menu_objects', 'custom_wp_nav_menu_objects', 10, 2);
+
+function get_category_name()
+{
+	$category_id = get_query_var('cat');
+
+	return get_category($category_id)->name;
+}

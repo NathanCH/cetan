@@ -1,0 +1,31 @@
+.Breadcrumb{
+
+	margin: 22px 0 0 0;
+
+	@media screen and(max-width: $break-small) {
+		margin: 6px 0 0 0;
+	}
+
+	&__item{
+		list-style: none;
+		display: inline-block;
+		color: $grey-light;
+	}
+
+	&__link{
+		color: $grey-light;
+		padding: 0 5px;
+
+		&:hover{
+			color: inherit;
+		}
+	}
+
+	&__link--active{
+		color: $grey;
+
+		&:hover{
+			color: $primary;
+		}
+	}
+}

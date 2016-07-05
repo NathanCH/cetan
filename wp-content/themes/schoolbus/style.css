@@ -1,5 +1,5 @@
 /*
-Theme Name: Cetan Spring Portfolio
+Theme Name: Cetan Schoolbus
 Author: Nathan Charrois
 Author URI: http://www.cetan.ca
 Description: Custom Wordpress theme for Summer 2016 portfolio.
@@ -16,7 +16,7 @@ The purpose of this CSS file is to
 	IMPORTS
 ---------------------------------------------------------------*/
 
-@import url("public/css/style.css"); /* Import CSS RESET */
+@import url("public/css/style.css");
 
 @import url("http://fonts.googleapis.com/css?family=Caveat:700"); 
 @import url("http://fonts.googleapis.com/css?family=Droid+Serif:400");

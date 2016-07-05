@@ -1,0 +1,26 @@
+.Form{
+
+	&__input-container{
+		padding: 5px 0
+	}
+
+	&__input,
+	&__textarea{
+		background: transparent;
+		box-shadow: none;
+		border: none;
+		border-bottom: 2px solid $grey;
+		height: 45px;
+	}
+
+	&__textarea{}
+
+	&__button{
+		display: block;
+		border: none;
+		background: $grey;
+		color: white;
+		padding: 10px 25px;
+		border-radius: 0px;
+	}
+}

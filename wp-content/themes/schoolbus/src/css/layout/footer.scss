@@ -11,8 +11,13 @@
 		height: 37px;
 		position: absolute;
 		top: -37px;
-		right: 20%;
+		right: 321px;
 		background-image: url('../../public/img/footer_detail.png');
+
+		@media screen and (max-width: $break-small) {
+			right: auto;
+			left: 0;
+		}
 	}
 
 	&__link{

@@ -2,12 +2,48 @@
 
 	margin: 25px 0 75px;
 
-	&__image{
-		border-radius: 3px;
+	&__thumbnail{
+
+		display: block;
+		position: relative;
+		box-sizing: border-box;
+		border: 12px solid white;
 
 		&:hover{
-			border-radius: 10px;
+			&:before{
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				content: "";
+				background: rgba(0,0,0,.50);
+				border-radius: 2px;
+			}
+			&:after{
+				content: "\f0da";
+				font-family: FontAwesome;
+				font-size: 28px;
+				padding-left: 3px;
+				border-radius: 30px;
+				text-align: center;
+				background: $primary;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 50px;
+				height: 50px;
+				color: white;
+				line-height: 50px;
+				margin: -25px 0 0 -25px;
+			}
 		}
+	}
+
+	&__image{
+		border-radius: 2px;
+		position: relative;
+		z-index: -1;
 	}
 
 	&__title{
@@ -19,5 +55,9 @@
 
 	&__link{
 		color: $grey;
+	}
+
+	&__meta{
+		color: $grey-light;
 	}
 }
