@@ -1,16 +1,16 @@
 .Page{
 	margin: 75px 0;
 
-	&--blog:before{
+	&--detail:before{
 		content: "";
 		display: inline-block;
 		width: 35px;
 		height: 4px;
 		background: $primary;
-		margin: 25px 0 50px;
-	}
+		margin: 25px 0 150px;
 
-	&--blog{
-		overflow: hidden;
+		@media screen and (max-width: $break-small) {
+			margin: 25px 0 50px;
+		}
 	}
 }

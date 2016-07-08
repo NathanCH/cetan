@@ -4,6 +4,7 @@
 @import "base/typography";
 
 // Components...
+@import "component/button";
 @import "component/logo";
 @import "component/menu";
 @import "component/hero";
@@ -15,6 +16,8 @@
 @import "component/form";
 @import "component/widget";
 @import "component/attachment";
+@import "component/client";
+@import "component/laptop";
 
 // Layout...
 @import "layout/header";

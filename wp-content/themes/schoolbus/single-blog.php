@@ -9,10 +9,10 @@ if (have_posts()) {
 <div class="row">
 	<div class="small-12 column">
 		<div class="Heading clearfix">
-			<h1 class="Heading__text pull-left">
+			<h1 class="Heading__text">
 				Blog
 			</h1>
-			<ul class="Breadcrumb pull-right">
+			<ul class="Breadcrumb">
 				<li class="Breadcrumb__item">
 					<a href="/blog" class="Breadcrumb__link Breadcrumb__link--active">
 						Back to Posts
@@ -24,7 +24,7 @@ if (have_posts()) {
 </div>
 <div class="row">
 	<div class="small-12 column">
-		<section class="Page Page--blog">
+		<section class="Page Page--detail">
 			<div class="row">
 				<div class="small-10 small-offset-1 medium-8 medium-offset-2">
 					<?php

@@ -11,6 +11,7 @@ add_action('init', 'schoolbus_setup');
 function schoolbus_post_setup()
 {
 	add_image_size('post-thumbnail', 600, 500, ['center', 'center']);
+	add_image_size('post-screen', 758, 447, ['center', 'center']);
 
 	wp_insert_term('Work', 'category', [
 		'description' => 'Completed work.',
@@ -79,4 +80,15 @@ function get_category_name()
 	$category_id = get_query_var('cat');
 
 	return get_category($category_id)->name;
+}
+
+function get_post_tags()
+{
+	echo '<ul class="Post__tag">';
+
+	foreach (get_the_tags() as $tag) {
+		echo '<li class="Post__tag-item">' . $tag->name . '</li>';
+	}
+
+	echo '</ul>';
 }

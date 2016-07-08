@@ -2,6 +2,7 @@
 	background: $background;
 	font-family: $font-body;
 	color: $grey;
+	position: relative;
 
 	&--noscroll{
 		overflow: hidden;

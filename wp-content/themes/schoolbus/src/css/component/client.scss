@@ -1,0 +1,16 @@
+.Client{
+	
+	display: table;
+	height: 100%;
+	width: 100%;
+
+	@media screen and (max-width: $break-small) {
+		margin: 75px 0 0 0;
+	}
+
+	&__logo{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+}

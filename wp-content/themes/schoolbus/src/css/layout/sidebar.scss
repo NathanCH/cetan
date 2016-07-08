@@ -1,3 +1,7 @@
 .Sidebar{
 	margin: 75px 0;
+
+	@media screen and (max-width: $break-small) {
+		text-align: left;
+	}
 }

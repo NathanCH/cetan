@@ -41,6 +41,7 @@
 			background: $grey-dark;
 			width: 50%;
 			min-width: 200px;
+			z-index: 1;
 
 			#{$block}__toggle{
 				color: $background;

@@ -3,10 +3,16 @@
 	margin-top: 150px;
 
 	@media screen and (max-width: $break-small) {
-		margin: 75px 0;
+		margin: 75px 0 25px;
 	}
 
 	&__text{
+		float: left;
 		font-family: inherit;
+
+		@media screen and (max-width: $break-small) {
+			float: none;
+			font-size: 2.5em;
+		}
 	}
 }

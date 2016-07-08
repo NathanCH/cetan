@@ -1,4 +1,5 @@
 .Footer{
+
 	padding: 50px 0;
 	background: white;
 	position: relative;
@@ -17,6 +18,14 @@
 		@media screen and (max-width: $break-small) {
 			right: auto;
 			left: 0;
+		}
+	}
+
+	&--grey{
+		background: $background;
+
+		&:before{
+			background-image: url('../../public/img/footer_detail_grey.png');
 		}
 	}
 

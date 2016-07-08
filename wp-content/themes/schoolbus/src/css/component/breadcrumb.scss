@@ -1,9 +1,11 @@
 .Breadcrumb{
 
 	margin: 22px 0 0 0;
+	float: right;
 
 	@media screen and(max-width: $break-small) {
-		margin: 6px 0 0 0;
+		margin: 30px 0 0 0;
+		float: none;
 	}
 
 	&__item{

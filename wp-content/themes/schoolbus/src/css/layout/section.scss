@@ -4,4 +4,11 @@
 	@media screen and (max-width: $break-small) {
 		margin: 75px 0;
 	}
+
+	&--white{
+		margin: 150px 0 0 0;
+		padding: 125px 0;
+		background: white;
+		overflow: hidden;
+	}
 }

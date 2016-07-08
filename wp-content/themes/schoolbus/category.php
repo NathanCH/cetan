@@ -4,10 +4,10 @@ get_header();
 <div class="row">
 	<div class="small-12 column">
 		<div class="Heading clearfix">
-			<h1 class="Heading__text pull-left">
+			<h1 class="Heading__text">
 				<?php echo get_category_name(); ?>
 			</h1>
-			<ul class="Breadcrumb pull-right">
+			<ul class="Breadcrumb">
 				<li class="Breadcrumb__item">
 					<a href="/" class="Breadcrumb__link">Home</a> /
 				</li>
