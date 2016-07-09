@@ -1,0 +1,25 @@
+.Spotlight{
+
+	margin: 0 0 150px;
+
+	@media screen and (max-width: $break-small) {
+		margin: 0 0 100px;
+	}
+
+	&__logo{
+		width: auto;
+		height: 75px;
+	}
+
+	&__lead{
+		padding: 50px 100px;
+
+		@media screen and (max-width: $break-small) {
+			padding: 50px 0;
+		}
+
+		&--alt{
+			padding: 25px 0;
+		}
+	}
+}

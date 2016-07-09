@@ -24,7 +24,7 @@ if (have_posts()) {
 </div>
 <div class="row">
 	<div class="small-12 column">
-		<section class="Page Page--detail">
+		<section class="Page Page--blog Page--detail">
 			<div class="row">
 				<div class="small-10 small-offset-1 medium-8 medium-offset-2">
 					<?php

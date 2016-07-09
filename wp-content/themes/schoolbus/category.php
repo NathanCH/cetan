@@ -22,11 +22,19 @@ get_header();
 </div>
 <div class="row">
 	<div class="small-12 column">
+		<section class="Page Page--detail">
+			<?php get_template_part('templates/content-spotlight'); ?>
+		</section>
+		<hr class="Divider Divider--dots" />
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 column">
 		<section class="Page">
 			<?php
 			if(have_posts()) {
 
-				get_template_part('templates/content-all');
+				get_template_part('templates/content-featured');
 
 			}
 

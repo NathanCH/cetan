@@ -12,4 +12,8 @@
 	@media screen and (max-width: $break-small) {
 		margin: 0;
 	}
+
+	&--dots{
+		background: url('../../public/img/divider-dots.png') no-repeat top center;
+	}
 }

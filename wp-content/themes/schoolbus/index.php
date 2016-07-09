@@ -9,7 +9,7 @@ get_template_part('templates/hero');
 			<?php
 			if(have_posts()) {
 
-				get_template_part('templates/content-featured');
+				get_template_part('templates/content-spotlight-alt');
 
 			}
 
@@ -20,6 +20,7 @@ get_template_part('templates/hero');
 			}
 			?>
 		</section>
+		<hr class="Divider Divider--dots" />
 		<section class="Clients Section">
 			<?php get_template_part('templates/content-clients'); ?>
 		</section>
