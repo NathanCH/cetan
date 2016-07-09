@@ -64,8 +64,9 @@ if (have_posts()) {
 							  rows="4"></textarea>
 				</div>
 				<div class="Form__input-container">
-					<input type="button"
-						   class="Button" value="Submit" />
+					<input type="submit"
+						   class="Button" 
+						   value="Submit" />
 				</div>
 			</form>
 		</section>

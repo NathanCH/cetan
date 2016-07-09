@@ -8,6 +8,5 @@
 		</p>
 	</div>
 	<div class="row column">
-		<a class="Button" href="/work/sparkatale">View Project</a>
 	</div>
 </div>

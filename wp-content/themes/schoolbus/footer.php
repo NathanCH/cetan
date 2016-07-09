@@ -7,7 +7,6 @@
 			</div>
 		</section>
 		<?php wp_footer(); ?>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
 		<script src="/wp-content/themes/schoolbus/public/js/app-min.js" type="text/javascript"></script>
 	</body>
 </html>

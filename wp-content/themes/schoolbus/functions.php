@@ -75,6 +75,13 @@ function custom_wp_nav_menu_objects($objects, $args)
 
 add_filter('wp_nav_menu_objects', 'custom_wp_nav_menu_objects', 10, 2);
 
+function enqueue_dependency()
+{
+	wp_enqueue_script("jquery");
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_dependency');
+
 function get_category_name()
 {
 	$category_id = get_query_var('cat');
@@ -92,3 +99,23 @@ function get_post_tags()
 
 	echo '</ul>';
 }
+
+function send_mail()
+{
+	$params = [];
+
+	parse_str($_POST['data'], $params);
+
+	$recipient = 'nathancharrois@gmail.com';
+	$from = $params['email'];
+	$subject = 'Cetan Contact Form: ' . $params['subject'];
+	$message = $params['message'];
+	$header = 'From:' . $from;
+
+	mail($recipient, $subject, $message, $header);
+
+	wp_die();
+}
+
+add_action('wp_ajax_send_mail', 'send_mail');
+add_action('wp_ajax_nopriv_send_mail', 'send_mail');
