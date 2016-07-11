@@ -6,6 +6,7 @@
 				</div>
 			</div>
 		</section>
+		<?php get_template_part('templates/google-analytics'); ?>
 		<?php wp_footer(); ?>
 		<script src="/wp-content/themes/schoolbus/public/js/app-min.js" type="text/javascript"></script>
 	</body>
