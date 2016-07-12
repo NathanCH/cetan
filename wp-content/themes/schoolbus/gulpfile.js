@@ -7,6 +7,7 @@ var rename = require('gulp-rename');
 var sourceMaps = require('gulp-sourcemaps');
 var watch = require('gulp-watch');
 var minify = require('gulp-minify');
+var concat = require('gulp-concat');
 
 gulp.task('sass', function() {
 	gulp.src('./src/css/*.scss')
@@ -19,13 +20,15 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-	gulp.src('./src/js/*.js')
+	gulp.src('./src/js/**/*.js')
+		.pipe(concat('app.js'))
 		.pipe(minify())
 		.pipe(gulp.dest('./public/js'));
 })
 
 gulp.task('watch', function() {
-	gulp.watch('./src/css/**/*', ['sass'])
+	gulp.watch('./src/css/**/*', ['sass']);
+	gulp.watch('./src/js/**/*', ['js']);
 });
 
 gulp.task('default', ['sass']);

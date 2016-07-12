@@ -64,7 +64,10 @@ if ( have_posts() ) {
 				<?php the_post_thumbnail('post-screen', ['class'=> 'Laptop__screen']); ?>
 			</div>
 			<div class="column row">
-				<!-- <a class="Button Button--primary" href="#">Open Gallery</a> -->
+				<a class="Button Button--primary" href="#">
+					Open Gallery
+					<i class="fa fa-external-link" style="margin-left:10px;"></i>
+				</a>
 				<a class="Button" href="<?php echo get_post_meta($post->ID, 'link', true); ?>">View Site</a>
 			</div>
 		</div>
