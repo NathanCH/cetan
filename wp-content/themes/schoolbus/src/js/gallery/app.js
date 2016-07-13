@@ -1,22 +1,22 @@
-(function($) {
+(function(window, $) {
 
 	'use strict';
 
-	function Gallery(selector) {
-		this.ui = app.UserInterface;
+	function Gallery(selector, photos) {
+		this.view = app.View;
+		this.controller = app.Controller;
 
-		var photo = {
-			src: 'http://placehold.it/500x350'
-		};
+		this.photo = app.Photo;
+		this.photo.add(photos);
 
-		this.ui.attachGallery(selector);
-		this.ui.setPhoto(photo);
+		this.view.attachGallery(selector);
+		this.view.setPhoto(
+			this.photo.current()
+		);
 
-		console.log(this.ui.gallery);
+		this.controller.bindEvents(this.view, this.photo);
 	}
 
-	$(document).ready(function() {
-		new Gallery('body');
-	});
+	window.Gallery = window.Gallery || Gallery;
 
-})(jQuery);
+})(window, jQuery);

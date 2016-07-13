@@ -32,31 +32,98 @@
 		});
 	});
 })(jQuery);
-(function($) {
+(function(window, $) {
 
 	'use strict';
 
-	function Gallery(selector) {
-		this.ui = app.UserInterface;
+	function Gallery(selector, photos) {
+		this.view = app.View;
+		this.controller = app.Controller;
 
-		var photo = {
-			src: 'http://placehold.it/500x350'
-		};
+		this.photo = app.Photo;
+		this.photo.add(photos);
 
-		this.ui.attachGallery(selector);
-		this.ui.setPhoto(photo);
+		this.view.attachGallery(selector);
+		this.view.setPhoto(
+			this.photo.current()
+		);
 
-		console.log(this.ui.gallery);
+		this.controller.bindEvents(this.view, this.photo);
 	}
 
-	$(document).ready(function() {
-		new Gallery('body');
-	});
+	window.Gallery = window.Gallery || Gallery;
 
-})(jQuery);
+})(window, jQuery);
 (function(window, $) {
 
-	var UserInterface = {
+	var Controller = {
+		bindEvents: function(view, photo) {
+			view.nextButton().on('click', function() {
+				view.setPhoto(
+					photo.next()
+				);
+			})
+
+			view.prevButton().on('click', function() {
+				view.setPhoto(
+					photo.prev()
+				);
+			});
+
+			view.closeButton().on('click', function() {
+				$(view.gallery).remove();
+			});
+		}
+	}
+
+	window.app = window.app || {};
+	window.app.Controller = Controller;
+
+})(window, jQuery);
+(function(window, $) {
+
+	var Photo = {
+		index: 0,
+		photoList: [],
+		add: function(photos) {
+			this.photoList = this.photoList.concat(photos);
+		},
+		current: function(){
+			return this.photoList[this.index];
+		},
+		next: function() {
+			return this.increment().current();
+		},
+		prev: function() {
+			return this.decrement().current();
+		},
+		increment: function() {
+			this.index++
+
+			if(this.index >= this.photoList.length) {
+				this.index = 0;
+			}
+
+			return this;
+		},
+		decrement: function() {
+			this.index--
+
+			if(this.index < 0) {
+				this.index = this.photoList.length - 1;
+			}
+
+			return this;
+		}
+	}
+
+	window.app = window.app || {};
+	window.app.Photo = Photo;
+
+})(window, jQuery);
+(function(window, $) {
+
+	var View = {
 		gallery: null,
 		photo: null,
 		createGallery: function() {
@@ -72,24 +139,27 @@
 			$(selector).append(this.gallery);
 		},
 		container: function() {
-			return $('<div />', {
-				class: 'Gallery'
+			return $('<div />', { 
+				class: 'Gallery' 
 			});
 		},
 		caption: function(){
-			return $('<div />', {
-				class: 'Gallery__caption',
-				text: 'The Bernie-or-Busters are still at it.'
-			});
+			var $caption = $('.Gallery__caption');
+
+			return $caption.length ? $caption : $('<div />', { class: 'Gallery__caption' });
 		},
 		closeButton: function() {
-			return $('<span />', {
+			var $closeButton = $('.Gallery__close-button');
+
+			return $closeButton.length ? $closeButton : $('<span />', {
 				class: 'Gallery__close-button',
 				text: 'Close'
 			});
 		},
 		placeholder: function() {
-			return $('<div />', {
+			var $placeholder = $('.Gallery__placeholder');
+
+			return $placeholder.length ? $placeholder : $('<div />', {
 				class: 'Gallery__placeholder'
 			}).append([
 				this.prevButton(),
@@ -97,26 +167,52 @@
 			]);
 		},
 		prevButton: function() {
-			return $('<div />', {
+			var $prevButton = $('.Gallery__control--left');
+
+			return $prevButton.length ? $prevButton : $('<div />', {
 				class: 'Gallery__control Gallery__control--left'
 			});
 		},
 		nextButton: function() {
-			return $('<div />', {
+			var $nextButton = $('.Gallery__control--right');
+
+			return $nextButton.length ? $nextButton : $('<div />', {
 				class: 'Gallery__control Gallery__control--right'
 			});
 		},
-		setPhoto: function(photo) {
-			this.photo = this.photo || $('<img />');
-			
-			var placeholder = this.gallery.find('.Gallery__placeholder');
-			var image = this.photo.attr("src", photo.src);
+		photo: function() {
+			var $photo = $('.Gallery__image');
 
-			placeholder.append(image);
+			return $photo.length ? $photo : $('<img />', {
+				class: 'Gallery__image'
+			});
+		},
+		setPhoto: function(photo) {
+			this.placeholder().append(this.photo());
+			this.caption().text(photo.caption);
+
+			this.photo().attr('src', photo.src);
 		}
 	};
 
 	window.app = window.app || {};
-	window.app.UserInterface = UserInterface;
+	window.app.View = View;
 
 })(window, jQuery);
+/**
+ * Tiny jQuery pub/sub.
+ * https://github.com/cowboy/jquery-tiny-pubsub
+ */
+var object = $({});
+
+$.subscribe = function() {
+	object.on.apply(object, arguments);
+}
+
+$.unsubscribe = function() {
+	object.off.apply(object, arguments);
+}
+
+$.publish = function() {
+	object.trigger.apply(object, arguments);
+}

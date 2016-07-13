@@ -64,7 +64,7 @@ if ( have_posts() ) {
 				<?php the_post_thumbnail('post-screen', ['class'=> 'Laptop__screen']); ?>
 			</div>
 			<div class="column row">
-				<a class="Button Button--primary" href="#">
+				<a class="Button Button--primary" hook="open-gallery">
 					Open Gallery
 					<i class="fa fa-external-link" style="margin-left:10px;"></i>
 				</a>
@@ -72,6 +72,28 @@ if ( have_posts() ) {
 			</div>
 		</div>
 	</section>
+	<script>
+	$(document).ready(function() {
+		var photos =  [
+			{
+				src: 'http://i.imgur.com/DD1JBrf.png',
+				caption: 'Before entering through the doors.'
+			},
+			{
+				src: 'http://i.imgur.com/AArLutn.jpg',
+				caption: 'Somewhere in Toronto'
+			},
+			{
+				src: 'http://i.imgur.com/rCYhHyK.jpg',
+				caption: 'A cool van.'
+			}
+		];
+
+		$('[hook="open-gallery"]').on('click', function(e) {
+			new Gallery('body', photos);
+		});
+	});
+	</script>
 <?php
 }
 
