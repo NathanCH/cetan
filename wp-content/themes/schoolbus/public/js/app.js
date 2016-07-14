@@ -130,7 +130,9 @@
 			return this.container().append([
 				this.caption(),
 				this.closeButton(),
-				this.placeholder()
+				this.placeholder(),
+				this.prevButton(),
+				this.nextButton()
 			]);
 		},
 		attachGallery: function(selector) {
@@ -161,10 +163,7 @@
 
 			return $placeholder.length ? $placeholder : $('<div />', {
 				class: 'Gallery__placeholder'
-			}).append([
-				this.prevButton(),
-				this.nextButton()
-			]);
+			});
 		},
 		prevButton: function() {
 			var $prevButton = $('.Gallery__control--left');
@@ -187,11 +186,43 @@
 				class: 'Gallery__image'
 			});
 		},
-		setPhoto: function(photo) {
-			this.placeholder().append(this.photo());
-			this.caption().text(photo.caption);
+		loader: function() {
+			var $loader = $('.Gallery__loader');
 
-			this.photo().attr('src', photo.src);
+			return $loader.length ? $loader : $('<div />', {
+				class: 'Gallery__loader fa fa-spinner fa-pulse'
+			});
+		},
+		setPhoto: function(photo) {
+			var self = this;
+			$.ajax({
+				type: 'GET',
+				url: photo.src,
+				cache: true,
+				xhr: function() {
+					var xhr = new window.XMLHttpRequest();
+
+					xhr.responseType = 'arraybuffer';
+
+					xhr.addEventListener('load', function(e){
+					    var arrayBufferView = new Uint8Array( e.target.response );
+					    var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
+					    var urlCreator = window.URL || window.webkitURL;
+					    var imageUrl = urlCreator.createObjectURL( blob );
+					    
+					    self.loader().remove();
+					    self.placeholder().append(self.photo());
+					    self.caption().text(photo.caption);
+					    self.photo().attr('src', imageUrl);
+					});
+
+					return xhr;
+				},
+				beforeSend: function() {
+					self.photo().remove();
+					self.placeholder().append(self.loader());
+				}
+			});
 		}
 	};
 

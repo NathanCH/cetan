@@ -76,7 +76,7 @@ if ( have_posts() ) {
 	$(document).ready(function() {
 		var photos =  [
 			{
-				src: 'http://i.imgur.com/DD1JBrf.png',
+				src: 'http://i.imgur.com/GkWTsot.jpg',
 				caption: 'Before entering through the doors.'
 			},
 			{

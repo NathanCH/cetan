@@ -48,59 +48,67 @@
 		transform: translate(-50%, -50%);
 	}
 
+	&__image{
+		box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	}
+
 	&__control{
-		width: 40px;
-		height: 40px;
-		line-height: 38px;
-		border-radius: 40px;
-		background: rgba(0,0,0,.50);
+		width: 45px;
+		height: 45px;
+		line-height: 45px;
+		border-radius: 45px;
+		background: rgba(0,0,0,.25);
 		position: absolute;
 		top: 50%;
 		transform: translate(0, -50%);
 		cursor: pointer;
 
 		@media screen and (max-width: $break-small) {
-			width: 30px;
-			height: 30px;
-			top: -25px;
-			line-height: 28px;
+			top: auto;
+			bottom: 0;
 		}
 
 		&--left{
-			left: -100px;
+			left: 100px;
 
 			@media screen and (max-width: $break-small) {
+				right: 80px;
 				left: auto;
-				right: 35px;
 			}
 
 			&::after{
 				display: block;
 				text-align: center;
 				content: "\f0d9";
-				font-size: 20px;
+				font-size: 30px;
 				font-family: FontAwesome;
 				color: white;
+				margin-left: -3px;
 			}
 		}
 
 		&--right{
-			right: -100px;
+			right: 100px;
 
 			@media screen and (max-width: $break-small) {
+				right: 20px;
 				left: auto;
-				right: 0;
 			}
 
 			&::after{
 				display: block;
 				text-align: center;
 				content: "\f0da";
-				font-size: 20px;
+				font-size: 30px;
 				font-family: FontAwesome;
-				
 				color: white;
+				margin-right: -3px;
 			}
 		}
+	}
+
+	&__loader.fa{
+		color: white;
+		font-size: 26px;
 	}
 }
